@@ -1,0 +1,77 @@
+a:link, a:hover, a:active, a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+
+body{
+	background-image: url('../img/bg.jpg');
+	background-repeat: none;
+	font-family: "Microsoft Yahei", Helvetica, sans-serif;
+	overflow: hidden;
+}
+
+.active{
+	display: block !important;
+	opacity: 1 !important;
+}
+
+/* login */
+.login-container{
+	width: 441px;
+	height: 500px;
+	padding: 50px 0 50px 0;
+	margin: 0 auto;
+	color: #fff;
+}
+
+.login-container .logo{
+	text-align: center;
+	font-size: 50px;
+	margin: 0 0 20px 0;
+}
+
+.login-container .action-btn{
+	text-align: center;
+	font-size: 30px;
+	margin: 0 0 20px 0;
+}
+
+.login-container .action-btn span{
+	margin:  0 10px;
+	padding: 10px;
+}
+
+.login-container .action-btn .select{
+	background-color: rgba(153,153,153,0.5);
+	border-radius: 25px;
+	-moz-transition: background-color 0.3s ease-in ;
+    -webkit-transition: background-color 0.3s ease-in;
+    -o-transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+}
+
+.login-container .action-box{
+	width: 310px;
+	height: 210px;
+	margin: 0 auto;
+	background-color: rgba(153,153,153,0.5);
+	padding: 20px 50px;
+	display: none;
+}
+
+.login-container .action-box .input-line{
+	padding: 0 0 10px 0;
+	display: inline-block;
+}
+
+.login-container .action-box .input-line .label{
+	width: 50px;
+	height: 50px;
+	font-size: 40px;
+	line-height: 50px;
+	float: left;
+}
+.login-container .action-box .input-line .input{
+	float: left;
+	height: 50px;
+}
