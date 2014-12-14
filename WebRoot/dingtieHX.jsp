@@ -6,6 +6,7 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
+    String email = (String) session.getAttribute("name"); 
     //Long userid = (Long) session.getAttribute("userid");
     //if (userid == null) {
     //    response.sendRedirect("./loginWeb.jsp");
@@ -68,7 +69,7 @@
 		<button class="menu-toggle" type="button"></button>
 
 		<ul class="topnav pull-right inline">
-		<li><a href="dtAll.jsp">顶贴</a>
+		<!-- <li><a href="dtAll.jsp">顶贴</a> -->
 			<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>
@@ -78,12 +79,33 @@
 		</ul>
 
 	</div>
-	<br>
+	
+	<div class="wrapper">
+		<div class="hidden-phone menu" id="menu">
+			<div class="profile">
+				<span>欢迎您：</span> <a><%=email%></a>
+			</div>
 
+			<ul class="menu-lists">
 
-			<!-- <div class="widget-hd">
-				<h2>发帖顶贴</h2>
-			</div> -->
+				<li class="menu-list menu-rep"><a href="./dingtieDFCF.jsp?sid=<%=number%>"
+					class="menu-title"><i></i><span>东方财富股吧</span> </a>
+				</li>
+				<li class="menu-list menu-any active"><a href="#"
+					class="menu-title"><i></i><span>和讯股吧</span> </a>
+				</li>
+				<li class="menu-list menu-rep"><a href="./dingtieJRJ.jsp?sid=<%=number%>"
+					class="menu-title"><i></i><span>金融界股吧</span> </a>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="content" class="content">
+			<ul class="breadcrumb">
+				<li>您在这里：</li>
+				<li class="color-red">设置/顶贴/和讯股吧</li>
+			</ul>
+
 			<div class="page-header" style="margin-left: 5%">
 				<span class="glyphicon glyphicon-th-large"></span>发帖顶贴
 			</div>
@@ -187,6 +209,8 @@
     }
     
     </script>
+					</div>
+					</div>
 					</div>
 				<!-- </div>
 			</div> -->

@@ -86,7 +86,7 @@ Bootstrap JavaScript
 	<div class="wrapper">
 		<div class="hidden-phone menu" id="menu">
 			<div class="profile">
-				<span>欢迎您：</span> <a><%=name%></a>
+				<span>欢迎您：</span> <a><%=email%></a>
 			</div>
 
 			<ul class="menu-lists">

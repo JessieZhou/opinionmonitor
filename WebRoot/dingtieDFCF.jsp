@@ -1,11 +1,13 @@
 <%@ page language="java"
-	import="java.util.*,com.hhhy.db.beans.PostArt,com.hhhy.db.DBUtils,com.hhhy.web.service.webservice.dfcf.DFCFDingUtil"
+	import="java.util.*,com.hhhy.db.beans.*,com.hhhy.db.DBUtils,com.hhhy.web.service.webservice.dfcf.DFCFDingUtil"
 	pageEncoding="utf-8"%>
 <%
 	String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
+    //Long userid = (Long) session.getAttribute("userid");
+    String email = (String) session.getAttribute("name"); 
     //Long userid = (Long) session.getAttribute("userid");
     //if (userid == null) {
     //    response.sendRedirect("./loginWeb.jsp");
@@ -17,6 +19,7 @@
     //DFCFCrawler dfcf = new DFCFCrawler();
     //dfcf.parserDFCF();
     List<PostArt> posts = DFCFDingUtil.getPosts(number);
+    Stock share = null;
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -57,6 +60,7 @@
 <link rel="stylesheet" href="./css/style-red.css">
 
 <link rel="stylesheet" href="./css/style-red-my.css">
+
 </head>
 
 <body>
@@ -68,7 +72,7 @@
 		<button class="menu-toggle" type="button"></button>
 
 		<ul class="topnav pull-right inline">
-			<li><a href="dtAll.jsp">顶贴</a>
+			<!-- <li><a href="dtAll.jsp">顶贴</a> -->
 			<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>
@@ -78,122 +82,143 @@
 		</ul>
 
 	</div>
-	<br>
 
-
-	<!-- <div class="widget-hd">
-				<h2>发帖顶贴</h2>
-			</div> -->
-	<div class="page-header" style="margin-left: 5%">
-		<span class="glyphicon glyphicon-th-large"></span>发帖顶贴
-	</div>
-	<div class="widget-bd h290" style="margin-left: 10%">
-		<!-- <div id="container" class="h220" data-highcharts-chart="0">
-					<div class="highcharts-container" id="highcharts-poscount"
-						 style="position: relative; overflow: hidden; width: 460px; height: 220px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
--->
-		<table cellpadding="10" align="center">
-			<tr>
-				<td>题目：</td>
-				<td><input id="title" name="title" type="text">
-				</td>
-			</tr>
-			<tr>
-				<td>发帖内容：</td>
-				<td><textarea name="contentF" id="contentF" rows="3"
-						style="resize:none"></textarea>
-				</td>
-			</tr>
 			
-			<!-- <tr>
-				<td>顶贴内容：</td>
-				<td><textarea name="contentD" id="contentD" placeholder="回车分隔"
-						rows="6" style="resize:none"></textarea>
-				</td>
-			</tr> -->
+	<div class="wrapper">
+		<div class="hidden-phone menu" id="menu">
+			<div class="profile">
+				<span>欢迎您：</span> <a><%=email%></a>
+			</div>
 
+			<ul class="menu-lists">
 
-			<tr>
-				<td></td>
-				<td></td>
-				<td>
-					<button class="btn btn-info" onclick=fatie("<%=number %>")>
-						点击这里</button>
-				</td>
-			</tr>
-		</table>
-
+				<li class="menu-list menu-any active"><a href="#"
+					class="menu-title"><i></i><span>东方财富股吧</span> </a>
+				</li>
+				<li class="menu-list menu-rep"><a href="./dingtieHX.jsp?sid=<%=number%>"
+					class="menu-title"><i></i><span>和讯股吧</span> </a>
+				</li>
+				<li class="menu-list menu-rep"><a href="./dingtieJRJ.jsp?sid=<%=number%>"
+					class="menu-title"><i></i><span>金融界股吧</span> </a>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="content" class="content">
+			<ul class="breadcrumb">
+				<li>您在这里：</li>
+				<li class="color-red">设置/顶贴/东方财富股吧</li>
+			</ul>
+			<div class="page-header" style="margin-left: 5%">
+				<span class="glyphicon glyphicon-th-large"></span>发帖顶贴
+			</div>
+			<div class="widget-bd h290" style="margin-left: 10%">
+				<!-- <div id="container" class="h220" data-highcharts-chart="0">
+							<div class="highcharts-container" id="highcharts-poscount"
+								 style="position: relative; overflow: hidden; width: 460px; height: 220px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
+		-->
+				<table cellpadding="10" align="center">
+					<tr>
+						<td>题目：</td>
+						<td><input id="title" name="title" type="text">
+						</td>
+					</tr>
+					<tr>
+						<td>发帖内容：</td>
+						<td><textarea name="contentF" id="contentF" rows="3"
+								style="resize:none"></textarea>
+						</td>
+					</tr>
+					
+					<!-- <tr>
+						<td>顶贴内容：</td>
+						<td><textarea name="contentD" id="contentD" placeholder="回车分隔"
+								rows="6" style="resize:none"></textarea>
+						</td>
+					</tr> -->
+		
+		
+					<tr>
+						<td></td>
+						<td></td>
+						<td>
+							<button class="btn btn-info" onclick=fatie("<%=number %>")>
+								点击这里</button>
+						</td>
+					</tr>
+				</table>
+		
+			</div>
+			<!-- </div>
+					</div> -->
+		
+		
+		
+			<div class="page-header" style="margin-left: 5%">
+				<span class="glyphicon glyphicon-th-large"></span>首页顶贴
+			</div>
+			<div class="widget-bd h290">
+				<!-- <div id="pie" class="h290" data-highcharts-chart="1">
+							<div class="highcharts-container"
+								id="highcharts-emotionDistributed"
+								style="position: relative; width: 460px; height: 290px; text-align: left; line-height: normal; z-index: 0;">
+		 -->
+		
+				<table align="center" cellspacing="10">
+					<%
+						if(posts==null || posts.size()==0){
+					%>
+					<tr>
+						<td>没有帖子显示</td>
+		
+					</tr>
+					<%
+						} else{ int i=0;
+					%>
+					<%
+						for(PostArt post:posts){
+					%>
+					<tr>
+						<td><a href="<%=post.getUrl()%>"><%=post.getTitle()%></a></td>
+		
+						<td><input type="text" id=<%=i%> placeholder="在此输入顶贴内容">
+						</td>
+						<td>
+							<button class="btn btn-info" onclick=dingtie("<%=post.getUrl()%>",<%=i%>)>
+								点击这里</button>
+						</td>
+		
+					</tr>
+					<%
+						i++; }}
+					%>
+				</table>
+			</div>
+				<script type="text/javascript">
+		    function dingtie(url, id){
+		    var cont = $("#"+id).val();
+		    	$.ajax({
+		    	type:"post",
+		    	url: "dingtiedfcf",
+		    	data: {url:url, content:cont},
+		    	success: function(msg){alert(msg);$("#"+id).val()="";},
+		    	});
+		    }
+		    
+		    function fatie(number){
+		    var title = $("#title").val();
+		    var content = $("#contentF").val();
+		    	$.ajax({
+		    	type:"post",
+		    	url: "fatiedfcf",
+		    	data: {title:title, content:content, number: number},
+		    	success: function(msg){alert(msg);$("#head").val()="";$("#contentF").val()=""},
+		    	});
+		    }
+		    
+		    </script>
+			
+		</div>
 	</div>
-	<!-- </div>
-			</div> -->
-
-
-
-	<div class="page-header" style="margin-left: 5%">
-		<span class="glyphicon glyphicon-th-large"></span>首页顶贴
-	</div>
-	<div class="widget-bd h290">
-		<!-- <div id="pie" class="h290" data-highcharts-chart="1">
-					<div class="highcharts-container"
-						id="highcharts-emotionDistributed"
-						style="position: relative; width: 460px; height: 290px; text-align: left; line-height: normal; z-index: 0;">
- -->
-
-		<table align="center" cellspacing="10">
-			<%
-				if(posts==null || posts.size()==0){
-			%>
-			<tr>
-				<td>没有帖子显示</td>
-
-			</tr>
-			<%
-				} else{ int i=0;
-			%>
-			<%
-				for(PostArt post:posts){
-			%>
-			<tr>
-				<td><a href="<%=post.getUrl()%>"><%=post.getTitle()%></a></td>
-
-				<td><input type="text" id=<%=i%> placeholder="在此输入顶贴内容">
-				</td>
-				<td>
-					<button class="btn btn-info" onclick=dingtie("<%=post.getUrl()%>",<%=i%>)>
-						点击这里</button>
-				</td>
-
-			</tr>
-			<%
-				i++; }}
-			%>
-		</table>
-		<script type="text/javascript">
-    function dingtie(url, id){
-    var cont = $("#"+id).val();
-    	$.ajax({
-    	type:"post",
-    	url: "dingtiedfcf",
-    	data: {url:url, content:cont},
-    	success: function(msg){alert(msg);$("#"+id).val()="";},
-    	});
-    }
-    
-    function fatie(number){
-    var title = $("#title").val();
-    var content = $("#contentF").val();
-    	$.ajax({
-    	type:"post",
-    	url: "fatiedfcf",
-    	data: {title:title, content:content, number: number},
-    	success: function(msg){alert(msg);$("#head").val()="";$("#contentF").val()=""},
-    	});
-    }
-    
-    </script>
-	</div>
-	<!-- </div>
-			</div> -->
-
 </body>
 </html>

@@ -91,17 +91,22 @@
 			<br> <br> <br>
 			<div align="center">
 				<h4>添加关键词</h4>
-				<table cellspacing="10">
-					<form action="addkeyword" method="POST">
+				<form action="addkeyword" method="POST">
+					<table >
+					
 						<tr>
-							<td><input id="label" name="keyword" type="text" style="width:60px;">
-							</td>
-							<td><input value=添加 class="btn btn-info" type="submit">
-							</td>
+							<th><input id="label" name="keyword" type="text" style="width:150px;height:30px">
+							</th>
+							
+						</tr>
+						<tr>
+						<th><input style="text-align: center;"value=添加 class="btn btn-info" type="submit" >
+							</th>
 						</tr>
 
-					</form>
-				</table>
+					
+					</table>
+				</form>
 			</div>
 			<br> <br> <br> <br>
 			<table align="center" cellspacing="10">
