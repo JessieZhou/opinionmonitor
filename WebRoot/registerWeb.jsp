@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="register-box">
 				<div class="login-logo">
 					<h1>
-						<a href=""><img src="./pic/hhhy2.png" alt="" width="230">
+						<a href=""><img src="" alt="" width="230">
 						</a>
 					</h1>
 				</div>
