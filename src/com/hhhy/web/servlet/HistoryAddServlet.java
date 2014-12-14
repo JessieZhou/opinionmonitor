@@ -63,6 +63,7 @@ public class HistoryAddServlet extends HttpServlet {
                         "end_date",
                         DateFormatUtils.formatTime(System.currentTimeMillis(),
                                 DateFormatUtils.yyyyMMdd2));
+                request.getSession().setAttribute("unset", "1");
 
             }
             request.getSession().setAttribute("kid", Integer.parseInt(kid));
