@@ -61,6 +61,15 @@
 
 <body>
 
+<% if(startTime == null ||(startTime.equals("")) && (endTime == null || endTime.equals(""))) {%>
+	<script>
+	alert("只能对历史时间进行一次设定，一旦设定,不能修改，请慎重")
+	</script>
+	<%} else{%>
+	<script>
+	alert("您已经进行过历史事件设定，不能对其进行修改")
+	</script>
+	<%} %> 
 	<div class="navbar">
 		<a class="appbrand" align="center" href="keylist"><img src="./pic/hhhy.png" width="130" alt=""
 			style="position: relative;top:0;"> </a>
@@ -126,11 +135,28 @@
 										</script> 
 										</li>
 								</ul>
+								<ul>
+								<div>
+								<% if(startTime == null ||(startTime.equals("")) && (endTime == null || endTime.equals(""))) {%>
+						只能对历史时间进行一次设定，一旦设定不能修改，请慎重
+						<%} else{%>
+						您已经进行过历史事件设定，不能对其进行修改
+						<%} %>
+							
+						</div>
+								</ul>
 							</div>
 						</div>
+						
+						<% if(startTime == null ||(startTime.equals("")) && (endTime == null || endTime.equals(""))) {%>
 						<div class="export-submit">
-							<input class="btn-red" type="submit" name="historyset" value="设置">
+							<input class="btn-red" type="submit" name="historyset" value="设置" title="只能对历史时间进行一次设定，一旦设定不能修改，请慎重">
 						</div>
+						<%} else{%>
+						<div class="export-submit">
+							<input class="btn-red" disabled="disabled" type="submit" name="historyset" value="设置" title="只能对历史时间进行一次设定，一旦设定不能修改，请慎重">
+						</div>
+						<%} %>
 						<!-- </div> -->
 					</div>
 				</div>
