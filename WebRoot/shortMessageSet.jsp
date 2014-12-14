@@ -200,7 +200,7 @@
 								<div class="control-group form-horizontal">
 									<label class="control-label" for="" style="width:80px">&nbsp;</label>
 									<div class="controls" style="margin-left:80px">
-										<input id="sendForm" class="btn-red" type="submit" name="yt0"
+										<input disabled="disabled" id="sendForm" class="btn-red" type="submit" name="yt0"
 											value="设置" />
 									</div>
 								</div>
