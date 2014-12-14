@@ -88,7 +88,7 @@
 
 		<ul class="topnav pull-right inline">
 		<li> <%=keyword %><li>
-		<li><a href="dtAll.jsp">顶贴</a></li>
+		<!-- <li><a href="dtAll.jsp">顶贴</a></li> -->
 			<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a></li>
 			<li><a href="loginWeb.jsp" class="top-logout" data-toggle="tooltip"
@@ -102,7 +102,7 @@
 			<div class="profile">
 				<span>欢迎您：</span> <a><%=email %></a>
 			</div>
-			<div id="side-search" class="search-box">
+			<!-- <div id="side-search" class="search-box"> -->
 				<!-- <form action="" method="get">
 					<div class="side-search-downlist">
 						<p class="current" id="search-type">全部</p>
@@ -124,7 +124,7 @@
 						<input id="search-type-flag" type="hidden" name="adv" value="1">
 					</div>
 				</form> -->
-			</div>
+			<!-- </div> -->
 			<ul class="menu-lists">
 				<li class="menu-list menu-general"><a href="summarize"
 					class="menu-title"><i></i><span>舆情概况</span> </a></li>

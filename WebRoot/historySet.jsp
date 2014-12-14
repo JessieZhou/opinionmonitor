@@ -67,13 +67,14 @@
 		<button class="menu-toggle" type="button"></button>
 
 		<ul class="topnav pull-right inline">
-<li><a href="dtAll.jsp">顶贴</a></li>
+<!-- <li><a href="dtAll.jsp">顶贴</a></li> -->
 			<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>
 			<li><a href="loginWeb.jsp" class="top-logout"
 				data-toggle="tooltip" data-placement="bottom"><i></i> 退出</a>
 			</li>
+			
 		</ul>
 
 	</div>
@@ -89,6 +90,9 @@
 					class="menu-title"><i></i><span>关键词设置</span> </a></li>
 				<li class="menu-list menu-rep"><a href="spiderurl"
 					class="menu-title"><i></i><span>自添加爬虫列表</span> </a></li>
+					<li class="menu-list menu-rep"><a href="dtAll.jsp"
+					class="menu-title"><i></i><span>顶贴</span> </a>
+				</li>
 			</ul>
 		</div>
 		<div id="content" class="content">

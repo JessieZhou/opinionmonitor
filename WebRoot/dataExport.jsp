@@ -52,7 +52,7 @@
 		<button class="menu-toggle" type="button"></button>
 		<ul class="topnav pull-right inline">
 			<li> <%=keyword %><li>
-			<li><a href="dtAll.jsp">顶贴</a></li>
+			<!-- <li><a href="dtAll.jsp">顶贴</a></li> -->
 			<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>

@@ -53,7 +53,7 @@
 		<button class="menu-toggle" type="button"></button>
 
 		<ul class="topnav pull-right inline">
-<li><a href="dtAll.jsp">顶贴</a></li>
+<!-- <li><a href="dtAll.jsp">顶贴</a></li> -->
 			<li><a href="#" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>
@@ -78,6 +78,9 @@
 				<li class="menu-list menu-rep"><a href="spiderurl"
 					class="menu-title"><i></i><span>自添加爬虫列表</span> </a>
 				</li>
+				<li class="menu-list menu-rep"><a href="dtAll.jsp"
+					class="menu-title"><i></i><span>顶贴</span> </a>
+				</li>
 			</ul>
 		</div>
 		<div id="content" class="content">
@@ -86,6 +89,21 @@
 				<li class="color-red">设置/关键词设置</li>
 			</ul>
 			<br> <br> <br>
+			<div align="center">
+				<h4>添加关键词</h4>
+				<table cellspacing="10">
+					<form action="addkeyword" method="POST">
+						<tr>
+							<td><input id="label" name="keyword" type="text" style="width:60px;">
+							</td>
+							<td><input value=添加 class="btn btn-info" type="submit">
+							</td>
+						</tr>
+
+					</form>
+				</table>
+			</div>
+			<br> <br> <br> <br>
 			<table align="center" cellspacing="10">
 				<%
 					if (keywords == null || keywords.size() == 0) {
@@ -126,22 +144,9 @@
 			</table>
 
 
-			<br> <br> <br> <br>
+			
 
-			<div align="center">
-				<h4>添加关键词</h4>
-				<table cellspacing="10">
-					<form action="addkeyword" method="POST">
-						<tr>
-							<td><input id="label" name="keyword" type="text">
-							</td>
-							<td><input value=添加 class="btn btn-info" type="submit">
-							</td>
-						</tr>
-
-					</form>
-				</table>
-			</div>
+			
 		</div>
 	</div>
 </body>

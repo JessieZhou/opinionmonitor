@@ -71,7 +71,7 @@ Bootstrap JavaScript
 		<button class="menu-toggle" type="button"></button>
 
 		<ul class="topnav pull-right inline">
-		<li><a href="dtAll.jsp">顶贴</a></li>
+		<!-- <li><a href="dtAll.jsp">顶贴</a></li> -->
 		<li><a href="keylist" class="top-opt" data-toggle="tooltip"
 				data-placement="bottom"><i></i>设置</a>
 			</li>
@@ -82,65 +82,90 @@ Bootstrap JavaScript
 		</ul>
 
 	</div>
-	<br>
-	<br>
-	<br>
-	<table align="center" cellspacing="10">
-		<%
-			if (shares == null || shares.size() == 0) {
-		%>
-		<tr>
-			<td>尚无股票片名添加</td>
+	
+	<div class="wrapper">
+		<div class="hidden-phone menu" id="menu">
+			<div class="profile">
+				<span>欢迎您：</span> <a><%=name%></a>
+			</div>
 
-		</tr>
-		<%
-			} else {
-		%>
+			<ul class="menu-lists">
 
-		<%
-			for (Stock share : shares) {
-		%>
-		<tr>
-			<td><%=share.getStockname() %></td>
-			<td><a href="./dingtieDFCF.jsp?sid=<%=share.getStockid() %>"> <input value=东方财富股吧 class="btn btn-info"
-					type="submit"> </a></td>
-			<td><a href="./dingtieHX.jsp?sid=<%=share.getStockid() %>"> <input value=和讯股吧 class="btn btn-info"
-					type="submit"> </a></td>
-			<td><a href="./dingtieJRJ.jsp?sid=<%=share.getStockid() %>"> <input value=金融界股吧 class="btn btn-info"
-					type="submit"> </a></td>
-			<td>
-				<form action="stockdel" method="POST">
-					<input value=删除 class="btn btn-danger" type="submit"> <input
-						type='hidden' name='kid' value="<%=share.getId() %>">
-				</form></td>
-		</tr>
-		<%
-			}
-			}
-		%>
-	</table>
-
-
-	<br>
-	<br>
-	<br>
-	<br>
-
-	<div align="center">
-		<h4>添加关键词</h4>
-		<table cellspacing="10">
-			<form action="stockadd" method="POST">
+				<li class="menu-list menu-rep"><a href="keylist"
+					class="menu-title"><i></i><span>关键词设置</span> </a>
+				</li>
+				<li class="menu-list menu-rep"><a href="spiderurl"
+					class="menu-title"><i></i><span>自添加爬虫列表</span> </a>
+				</li>
+				<li class="menu-list menu-any active"><a href="#"
+					class="menu-title"><i></i><span>顶贴</span> </a>
+				</li>
+			</ul>
+		</div>
+		<div id="content" class="content">
+			<ul class="breadcrumb">
+				<li>您在这里：</li>
+				<li class="color-red">设置/顶贴</li>
+			</ul>
+			<br>
+			<br>
+			<br>
+			<div align="center">
+				<h4>添加关键词</h4>
+				<table cellspacing="10">
+					<form action="stockadd" method="POST">
+						<tr>
+							<td><input id="shareName" name="shareName" type="text" placeholder="股票名称">
+							</td>
+							<td><input id="shareNum" name="shareNum" type="text" placeholder="股票代码">
+							</td>
+							<td><input value=添加 class="btn btn-info" type="submit">
+							</td>
+						</tr>
+		
+					</form>
+				</table>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<table align="center" cellspacing="10">
+				<%
+					if (shares == null || shares.size() == 0) {
+				%>
 				<tr>
-					<td><input id="shareName" name="shareName" type="text" placeholder="股票名称">
-					</td>
-					<td><input id="shareNum" name="shareNum" type="text" placeholder="股票代码">
-					</td>
-					<td><input value=添加 class="btn btn-info" type="submit">
-					</td>
+					<td>尚无股票片名添加</td>
+		
 				</tr>
-
-			</form>
-		</table>
+				<%
+					} else {
+				%>
+		
+				<%
+					for (Stock share : shares) {
+				%>
+				<tr>
+					<td><%=share.getStockname() %></td>
+					<td><a href="./dingtieDFCF.jsp?sid=<%=share.getStockid() %>"> <input value=东方财富股吧 class="btn btn-info"
+							type="submit"> </a></td>
+					<td><a href="./dingtieHX.jsp?sid=<%=share.getStockid() %>"> <input value=和讯股吧 class="btn btn-info"
+							type="submit"> </a></td>
+					<td><a href="./dingtieJRJ.jsp?sid=<%=share.getStockid() %>"> <input value=金融界股吧 class="btn btn-info"
+							type="submit"> </a></td>
+					<td>
+						<form action="stockdel" method="POST">
+							<input value=删除 class="btn btn-danger" type="submit"> <input
+								type='hidden' name='kid' value="<%=share.getId() %>">
+						</form></td>
+				</tr>
+				<%
+					}
+					}
+				%>
+			</table>		
+			
+			</div>
 	</div>
 </body>
 </html>
