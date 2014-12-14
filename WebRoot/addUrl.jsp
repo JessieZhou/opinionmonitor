@@ -50,7 +50,7 @@
 
 <body>
 	<div class="navbar">
-		<a class="appbrand" align="center" href=""><img src="./pic/hhhy.png" width="130" alt=""
+		<a class="appbrand" align="center" href="keylist"><img src="./pic/hhhy.png" width="130" alt=""
 			style="position: relative;top:0;"> </a>
 		<button class="menu-toggle" type="button"></button>
 

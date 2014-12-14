@@ -66,7 +66,7 @@
 <body>
 
 	<div class="navbar">
-		<a class="appbrand" align="center" href=""><img
+		<a class="appbrand" align="center" href="dtAll.jsp"><img
 			src="./pic/hhhy.png" width="130" alt=""
 			style="position: relative;top:0;"> </a>
 		<button class="menu-toggle" type="button"></button>
