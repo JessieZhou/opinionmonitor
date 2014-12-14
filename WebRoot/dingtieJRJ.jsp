@@ -85,15 +85,20 @@
 			</div>
 
 			<ul class="menu-lists">
-
-				<li class="menu-list menu-rep"><a href="./dingtieDFCF.jsp?sid=<%=number%>"
-					class="menu-title"><i></i><span>东方财富股吧</span> </a>
+<li class="menu-list menu-rep"><a href="keylist"
+					class="menu-title"><i></i><span>关键词设置</span> </a>
 				</li>
-				<li class="menu-list menu-rep"><a href="./dingtieHX.jsp?sid=<%=number%>"
-					class="menu-title"><i></i><span>和讯股吧</span> </a>
+				<li class="menu-list menu-rep"><a href="spiderurl"
+					class="menu-title"><i></i><span>自添加爬虫列表</span> </a>
 				</li>
-				<li class="menu-list menu-any active"><a href="#"
-					class="menu-title"><i></i><span>金融界股吧</span> </a>
+				<li id="more-sub-menu" class="menu-list menu-lat  active"><a href="dtAll.jsp"
+					class="menu-title"><i></i><span>顶贴</span> </a>
+				
+					<ul class="sub-menu-list" id="sub-menu-list">
+						<li><a href="./dingtieDFCF.jsp?sid=<%=number%>"><i></i><span>东方财富股吧</span> </a></li>
+						<li><a href="./dingtieHX.jsp?sid=<%=number%>"><i></i><span>和讯股吧</span> </a></li>
+						<li class="sub-active"><a href="#"><i></i><span>金融界股吧</span> </a></li>
+					</ul>
 				</li>
 			</ul>
 		</div>
