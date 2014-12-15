@@ -102,16 +102,21 @@ public class ReportProcessor {
                 EmailEntry entry = new EmailEntry();
                 entry.subject = "邮件告警";
                 entry.text = content;
-                entry.toAddresses = user;
+//                entry.toAddresses = user;
+                String[] userss = user.split("#");
+                for(String u:userss){
+                    String t = u.trim();
                 try {
+                    entry.toAddresses = t;
                     EmailReport.sendMail(entry);
-                } catch (MessagingException e) {
+                    }
+                catch (MessagingException e) {
                     logger.warn(e.getMessage());
                 }
-            }
             // emailWaiting.clear();
+            }
         }
-
+        }
     }
 
     public static class MessageTask extends TimerTask {
@@ -134,7 +139,6 @@ public class ReportProcessor {
             }
             // emailWaiting.clear();
         }
-
     }
 
 }

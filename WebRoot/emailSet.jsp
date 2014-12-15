@@ -179,11 +179,11 @@
 							</ul>
 							<div class="tab-content pd40">
 								<div class="control-group form-horizontal">
-
+						
 									<label class="control-label" for="email" style="width:80px">发送邮箱：</label>
 									<div class="controls" style="margin-left:80px">
 										<input value="<%=reportrmail%>" name="SendForm[warn_mail]"
-											id="SendForm_warn_mail" type="text" />
+											id="SendForm_warn_mail" type="text" />&nbsp;&nbsp;多个邮箱请使用#分隔
 										<div class="errorMessage" id="SendForm_email_em_"
 											style="display:none"></div>
 									</div>
@@ -204,7 +204,7 @@
 										</span>
 									</div>
 								</div>
-
+								
 								<div class="control-group form-horizontal">
 									<label class="control-label" for="" style="width:80px">&nbsp;</label>
 									<div class="controls" style="margin-left:80px">
